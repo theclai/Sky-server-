@@ -1,0 +1,90 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Configurations>Debug;Release;themeConfig</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App">
+      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+    </PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Styles\NewFolder\**" />
+    <Content Remove="Styles\NewFolder\**" />
+    <EmbeddedResource Remove="Styles\NewFolder\**" />
+    <None Remove="Styles\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\_MessagesController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\FindingChart.cshtml" />
+    <Content Remove="Views\_SearchFormLayout.cshtml" />
+    <Content Remove="wwwroot\js\skyquery.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="scripts\skyserver.js" />
+    <None Remove="scripts\sqlsearch.js" />
+    <None Remove="scripts\validate_search.js" />
+    <None Remove="Styles\generic.less" />
+    <None Remove="Styles\ImagingQuery.less" />
+    <None Remove="Styles\IRspectrosearch.less" />
+    <None Remove="Styles\radialsearch.less" />
+    <None Remove="Styles\spectroquery.less" />
+    <None Remove="Styles\splashheader.less" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="scripts\skyserver.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="scripts\sqlsearch.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="scripts\validate_search.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grunt" Version="0.1.13" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6"><PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+<Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+</PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Web">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\_EmptyLayout.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\" />
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\skyquery.js" />
+  </ItemGroup>
+
+</Project>

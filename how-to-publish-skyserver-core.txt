@@ -1,0 +1,42 @@
+HOW TO PUBLISH SKYSERVER CORE:
+
+1. This assumes that you have a version of the project working: it builds in VS2019 (Shift-Ctrl-B) and you can run it in VS2019 (F5)
+2. In the VS2019 menus, go to Build -> Publish
+3. Choose the following settings:
+   a. Publish Method = File System
+   b. Target location = (navigate through your project tree to bin\Debug\netcoreapp2.2\publish\)
+   c. Click on Settings in the left-hand menu list
+   d. Configuration = Debug
+   e. Target Framework = netcoreapp2.2
+   f. Deployment Mode = Self-Contained
+   g. Target Runtime = win-x86
+4. Click Save
+5. Click Publish
+6. Navigate into the directory SkyServerCore/bin/Debug/netcoreapp2.2/publish/
+7. Open web.config
+8. There is currently a line that says:
+
+<aspNetCore processPath=".\SkyserverCore.exe" stdoutLogEnabled="false" stdoutLogFile=".\logs\stdout" />
+
+change it to this:
+
+      <aspNetCore processPath=".\SkyserverCore.exe" stdoutLogEnabled="true" stdoutLogFile=".\logs\stdout">
+        <environmentVariables>
+          <environmentVariable name="ASPNETCORE_ENVIRONMENT" value="Development" />
+        </environmentVariables>
+      </aspNetCore>
+
+9. If you have already created a website through IIS on scidev02, skip to step 15. If not...
+10. If you haven't already created a site, do so now - from the Windows Start Menu, open Internet Information Services (IIS)
+11. Navigate to Sites -> Default Web Site
+12. Right click, select "Add Application"
+13. Done! Load website in browser.
+14. Enter an Alias, browse for the right physical path, select "CoreApp" for Application pool, click OK.
+15. Go to a machine OUTSIDE of scidev02 and load your site in a browser.
+16. Verify that the site is working the way it should. Now it's time to move the site to preprod on skytest.
+17. Copy the entire publish directory into your file system (e.g. on tenacious/raddick)
+18. Remote desktop into skytest.pha.jhu.edu
+Go to \\skytest\preprod.skyserver.sdss.org\current\SkyServerCore\bin\debug\netcoreapp2.2
+19. Rename the current publish directory with the date and hash of the last git checkout it includes
+20. MOVE (not copy!) today's publish directory from your filesystem space into this directory so it becomes the new publish directory
+21. Go here, and everything should work: http://test.preprod.skyserver.sdss.org/skyserver-new

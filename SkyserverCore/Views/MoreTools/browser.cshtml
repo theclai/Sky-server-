@@ -1,0 +1,91 @@
+﻿@{
+    Layout = "/Views/Shared/_MoreToolsLayout.cshtml";
+    ViewData["Title"] = "Schema Browser";
+
+}
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/css/skyserver.css" />
+}
+<h1>@ViewData["Title"]</h1>
+<div class="row">
+    <div class="col-xs-12 col-sm-9">
+        <div class="overview-wrapper">
+            <h2>Overview</h2>
+            <p>
+                The data in the database is contained in <span class="vocabulary">Tables</span>, organized in columns and rows.
+                We have defined <span class="vocabulary">Views</span> over the tables. These represent special subsets of the
+                original table.
+            </p>
+            <p>
+                Most of the tables also have one or more <span class="vocabulary">Indices</span> defined on them to speed up
+                searches on them.
+            </p>
+            <p>
+                <span class="vocabulary">Functions</span> and stored <span class="vocabulary">Procedures</span> take a number of parameters, and execute a
+                previously defined sequence of commands. Usually, their names are prefixed by
+                <em>f</em> or <em>sp</em>, as in <em>fPhotoStatus</em> or <em>spGetFiberList</em>.
+            </p>
+            <p>
+                The table <span class="vocabulary">SDSSConstants</span> contains most of the parameters relevant to the SDSS.
+                Their values can be displayed by clicking on the link in the left hand panel.
+            </p>
+            <p>
+                The table <span class="vocabulary">DataConstants</span> contains most of the bit-flags and enumerated quantities
+                relevant to the SDSS. Their values " can be displayed by clicking on the link in the
+                left hand panel. There are several access functions to make ineterpretations and
+                the " back and forth conversions easier. They are displayed when you look" at the
+            </p>
+            <p>
+                Click on the plus sign [+] in front of the categories on the left to get an expanded view,
+                on the minus sign [-] to collapse the list, on the name to get a summary, and on the individual
+                items to get their detailed description.
+            </p>
+            <p>
+                Enter a keyword into the search box on the top, and press Enter or the Go button
+                to search through the descriptions and units stored in the database.
+            </p>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+        <div>
+            <h2>Search for</h2>
+            <h3>
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownTables" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Tables <span class="caret"></span></button>
+            </h3>
+            <ul class="dropdown-menu" aria-labelledby="dropdownTables">
+                <li><a href="#">Table</a></li>
+                <li><a href="#">Another Table</a></li>
+            </ul>
+            <h3>
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownViews" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Views <span class="caret"></span></button>
+            </h3>
+            <ul class="dropdown-menu" aria-labelledby="dropdownViews">
+                <li><a href="#">View</a></li>
+                <li><a href="#">Another View</a></li>
+            </ul>
+            <h3>
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownFunctions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Functions <span class="caret"></span></button>
+            </h3>
+            <ul class="dropdown-menu" aria-labelledby="dropdownFunctions">
+                <li><a href="#">Function</a></li>
+                <li><a href="#">Another Function</a></li>
+            </ul>
+            <h3>
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownProcedures" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Procedures <span class="caret"></span></button>
+            </h3>
+            <ul class="dropdown-menu" aria-labelledby="dropdownProcedures">
+                <li><a href="#">Procedure</a></li>
+                <li><a href="#">Another Procedure</a></li>
+            </ul>
+            <h3>
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownIndices" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Indices <span class="caret"></span></button>
+            </h3>
+            <ul class="dropdown-menu" aria-labelledby="dropdownIndices">
+                <li><a href="#">Index</a></li>
+                <li><a href="#">Another Index</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+@section Scripts {
+}

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkyserverCore", "SkyserverCore\SkyserverCore.csproj", "{4E2FA8B3-ED25-476A-BD8C-9D4F470BF59F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		themeConfig|Any CPU = themeConfig|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E2FA8B3-ED25-476A-BD8C-9D4F470BF59F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2FA8B3-ED25-476A-BD8C-9D4F470BF59F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2FA8B3-ED25-476A-BD8C-9D4F470BF59F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2FA8B3-ED25-476A-BD8C-9D4F470BF59F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2FA8B3-ED25-476A-BD8C-9D4F470BF59F}.themeConfig|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2FA8B3-ED25-476A-BD8C-9D4F470BF59F}.themeConfig|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74AE3494-42DC-498E-BDFA-49E7A3D69F2F}
+	EndGlobalSection
+EndGlobal
